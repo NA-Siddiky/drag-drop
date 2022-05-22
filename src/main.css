@@ -3,10 +3,31 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* :root {
+  --box-shadow: rgb(149, 157, 165, 0.2) 0px 8px 24px;
+} */
 
 body {
   background-color: #f3f3f3;
 }
+/* 
+.dropbox {
+  display: flex;
+  justify-content: center;
+
+  height: 100vh;
+}
+.box {
+  background-color: #f3fef4;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow);
+}
+.header {
+  margin-top: 30px;
+  text-align: center;
+} */
+
 .flexbox {
   display: flex;
   justify-content: space-between;
