@@ -5,13 +5,20 @@ import "./assets/App.css"
 import DropFileInput from './components/drop-file-input/DropFileInput';
 
 function App() {
+  const onFileChange = (files) => {
+    console.log(files);
+  }
+
+
   return (
     <div className="App">
       <div className="box">
         <h2 className="header">
           Drop here
         </h2>
-        <DropFileInput />
+        <DropFileInput>
+          onFileChange={(files) => onFileChange(files)}
+        </DropFileInput>
       </div>
 
 
