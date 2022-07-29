@@ -41,3 +41,48 @@ function App() {
 }
 
 export default App;
+
+
+function makeid(length) {
+  var result = '';
+  var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() *
+      charactersLength));
+  }
+  return result;
+}
+
+const output = makeid(32);
+console.log(output);
+
+function parseBirthday(remarkString) {
+  var regex = /year(?<year>\d{4})|month(?<month>\d{1,2})|day(?<day>\d{1,2})/gm;
+
+  let m;
+  var matches = [];
+  var formattedDate = '';
+
+  while ((m = regex.exec(remarkString)) !== null) {
+    // This is necessary to avoid infinite loops with zero-width matches
+    // console.log(m.input)
+    let str = m.input
+    let matches = str.match(/\d+/g);
+    console.log(matches);
+
+
+    // for (let i = 0; i < str.length; i++) {
+    //   const str = array[i];
+    //   console.log(str )
+    // }
+
+    if (matches.index === regex.lastIndex) {
+      regex.lastIndex++;
+    }
+
+    formattedDate += matches[1];
+  }
+
+  return formattedDate;
+}
